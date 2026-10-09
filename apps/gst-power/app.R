@@ -1,3 +1,3 @@
 library(gst)
 
-gst_power_app()
+gst_power_app(runApp = FALSE)

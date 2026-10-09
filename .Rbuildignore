@@ -1,6 +1,7 @@
 ^renv$
 ^renv\.lock$
 ^app\.R$
+^apps/
 ^rsconnect$
 ^\.vscode$
 ^.*\.Rproj$

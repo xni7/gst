@@ -2,10 +2,10 @@
 % Please edit documentation in R/util-sartheme.R
 \name{sartheme}
 \alias{sartheme}
-\title{Sarepta theming function (ported over from Sarappta)}
+\title{Theme for the gst Shiny apps}
 \usage{
 sartheme()
 }
 \description{
-Sarepta theming function (ported over from Sarappta)
+Theme for the gst Shiny apps
 }

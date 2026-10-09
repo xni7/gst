@@ -1,3 +1,6 @@
+# Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst.
+# Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0.
+
 #' A Shiny app to make a forest plot
 #'
 #' @param runApp should the app be run on completion, default is TRUE
@@ -617,7 +620,7 @@ make_forestplot_app <- function(runApp=TRUE, plot_width=1000, plot_height=500) {
           tags$a(
             shiny::icon("circle-question"),
             "User Guide",
-            href = "https://connect.sarepta.com/gst-pkgdown/articles/forestplot.html",
+            href = "https://xni7.github.io/gst/articles/forestplot.html",
             target = "_blank"
           )
         )

@@ -1,5 +1,8 @@
 ^renv$
 ^renv\.lock$
+^app\.R$
+^rsconnect$
+^\.vscode$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^_pkgdown\.yml$

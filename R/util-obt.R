@@ -1,3 +1,5 @@
+# Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst.
+# Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0.
 
 #' Perform Obrien truncated closed testing
 #'
@@ -38,7 +40,8 @@
 #' @note This is the truncated closed test as proposed by:
 #' Luo, X., Li, L., Savenkov, O., Liu, W., Ni, X., Tang, W. and Guo, W., 2025.
 #' Multiple Comparisons Procedures for Analyses of Joint Primary Endpoints and
-#' Secondary Endpoints. Pharmaceutical Statistics, 24(3), p.e70010
+#' Secondary Endpoints. Pharmaceutical Statistics, 24(3), p.e70010.
+#' doi: https://doi.org/10.1002/pst.70010
 #'
 #' @export
 #'

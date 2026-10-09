@@ -1,4 +1,7 @@
-#' Sarepta theming function (ported over from Sarappta)
+# Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst.
+# Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0.
+
+#' Theme for the gst Shiny apps
 sartheme <- function() {
 
   sar_purple <- '#661b62'

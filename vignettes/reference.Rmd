@@ -7,6 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<!-- Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst. Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0. -->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -83,7 +85,7 @@ where $ev$ is eigenvalues of correlation matrix $R$ among tests, and $k$ is the 
 
 ## Reference
 
-[GST White Paper](https://sarepta.sharepoint.com/:w:/r/sites/Biometrics/Shared%20Documents/Biometrics-Functional-Initiatives/Global-Statistical-Test/SRP%20GST%20White%20Paper%20V1.0.docx?d=w6c16effd0e6e41fd8d201d17a3a27bc9&csf=1&web=1&e=xGzh2g)
+Luo X, Li L, Savenkov O, Liu W, Ni X, Tang W, Guo W. Multiple Comparisons Procedures for Analyses of Joint Primary Endpoints and Secondary Endpoints. Pharmaceutical Statistics. 2025;24(3):e70010. doi: 10.1002/pst.70010.
 
 Dallow NS, Leonov SL, Roger JH. Practical usage of O'Brien's OLS and GLS statistics in clinical trials. Pharm Stat. 2008 Jan-Mar;7(1):53-68. doi: 10.1002/pst.268. PMID: 17390306
 

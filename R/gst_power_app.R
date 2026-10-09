@@ -1,3 +1,6 @@
+# Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst.
+# Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0.
+
 #' Launch the GST Power App
 #'
 #' @param runApp should the app be run on completion, default is TRUE
@@ -59,7 +62,7 @@ gst_power_app <- function(runApp = TRUE) {
           tags$a(
             shiny::icon("book"),
             "Reference",
-            href = "https://connect.sarepta.com/gst-pkgdown/articles/reference.html",
+            href = "https://xni7.github.io/gst/articles/reference.html",
             target = "_blank"
           )
         ),
@@ -68,7 +71,7 @@ gst_power_app <- function(runApp = TRUE) {
           tags$a(
             shiny::icon("circle-question"),
             "User Guide",
-            href = "https://connect.sarepta.com/gst-pkgdown/articles/gst_power_app.html",
+            href = "https://xni7.github.io/gst/articles/gst_power_app.html",
             target = "_blank"
           )
         )

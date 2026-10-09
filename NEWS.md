@@ -1,3 +1,14 @@
+<!-- Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst. Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0. -->
+
+# gst 0.3.1
+
+## Minor Changes
+
+* Point the package site, issue links, and in-app help links at the xni7/gst fork
+* Cite Luo et al. (2025) in the reference vignette and in `obt()`, and remove the private white-paper link
+* Record Xiao Ni as the maintainer contact
+* Reword the `sartheme()` title; the function name and app colors are unchanged
+
 # gst 0.3.0
 
 Last release on GitLab.  `gst` will move to GitHub for all future development

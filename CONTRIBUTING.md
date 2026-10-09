@@ -1,3 +1,5 @@
+<!-- Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst. Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0. -->
+
 # Contributing to `gst`
 
 Thank you for your interest in contributing to **gst**! We welcome bug reports, feature requests, and code contributions. This guide will help you get started.
@@ -27,7 +29,7 @@ If you find a bug, please help us by reporting it:
    - R version and operating system.
    - Any relevant logs or screenshots.
 
-👉 [Submit a bug report](https://github.com/Sarepta-Therapeutics/gst/issues/new)
+👉 [Submit a bug report](https://github.com/xni7/gst/issues/new)
 
 ---
 
@@ -41,7 +43,7 @@ We love hearing your ideas! To request a new feature:
    - Why it would be useful.
    - Any relevant examples or use cases.
 
-👉 [Request a feature](https://github.com/Sarepta-Therapeutics/gst/issues/new)
+👉 [Request a feature](https://github.com/xni7/gst/issues/new)
 
 ---
 

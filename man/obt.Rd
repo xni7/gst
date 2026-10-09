@@ -51,7 +51,8 @@ Perform Obrien truncated closed testing
 This is the truncated closed test as proposed by:
 Luo, X., Li, L., Savenkov, O., Liu, W., Ni, X., Tang, W. and Guo, W., 2025.
 Multiple Comparisons Procedures for Analyses of Joint Primary Endpoints and
-Secondary Endpoints. Pharmaceutical Statistics, 24(3), p.e70010
+Secondary Endpoints. Pharmaceutical Statistics, 24(3), p.e70010.
+doi: https://doi.org/10.1002/pst.70010
 }
 \section{Input Data Requirements}{
 

@@ -1133,18 +1133,18 @@
         "RemoteHost": "api.github.com",
         "RemoteRepo": "gst",
         "RemoteUsername": "xni7",
-        "RemoteRef": "main",
-        "RemoteSha": "a92ff9b516d001452fbf5c10a7bc2b09d928154e",
+        "RemoteRef": "170dae6f5904fa32d070d1c3e3fe64e4132015e5",
+        "RemoteSha": "170dae6f5904fa32d070d1c3e3fe64e4132015e5",
         "GithubRepo": "gst",
         "GithubUsername": "xni7",
-        "GithubRef": "main",
-        "GithubSHA1": "a92ff9b516d001452fbf5c10a7bc2b09d928154e",
+        "GithubRef": "170dae6f5904fa32d070d1c3e3fe64e4132015e5",
+        "GithubSHA1": "170dae6f5904fa32d070d1c3e3fe64e4132015e5",
         "NeedsCompilation": "no",
-        "Packaged": "2026-10-09 03:01:49 UTC; venus",
+        "Packaged": "2026-10-09 03:21:56 UTC; venus",
         "Author": "Lerong Li [aut, led],\n  Anthony Pileggi [aut],\n  Xiaolong Luo [aut],\n  Xiao Ni [aut, cre, pdr],\n  Sarepta Therapeutics Inc. [cph, fnd],\n  Stephen Knapp [ctb] (ORCID: <https://orcid.org/0000-0002-5101-4555>),\n  Preston Burns [ctb]",
         "Maintainer": "Xiao Ni <mooncase@gmail.com>",
         "Depends": "R (>= 4.1.0)",
-        "Built": "R 4.5.1; ; 2026-10-09 03:01:50 UTC; unix"
+        "Built": "R 4.5.1; ; 2026-10-09 03:21:57 UTC; unix"
       }
     },
     "gtable": {

@@ -18,6 +18,8 @@
 #' }
 make_forestplot_app <- function(runApp=TRUE, plot_width=1000, plot_height=500) {
 
+  shiny::addResourcePath("www", system.file("www", package = "gst"))
+
   # Define default data
   default_data <- forest_data()
 

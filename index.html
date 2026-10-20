@@ -74,6 +74,17 @@
 <p>The {gst} package provides a toolbox for assessing sample size and power for Global Statistical Tests across a variety of scenarios, and presenting consolidated evidence using a forest plot.</p>
 </div>
 <div class="section level2">
+<h2 id="talk">Talk<a class="anchor" aria-label="anchor" href="#talk"></a>
+</h2>
+<p>R/Pharma 2026: <em>Totality of Evidence in Minutes: Interactive Apps for GST Power and Publication-Ready Forest Plot</em></p>
+<ul>
+<li>Video (9.5 min): <a href="https://www.youtube.com/watch?v=UmHAQsYu50o" class="external-link uri">https://www.youtube.com/watch?v=UmHAQsYu50o</a>
+</li>
+<li>Slides: <a href="https://xni7.github.io/talks/rpharma2026-gst/" class="external-link uri">https://xni7.github.io/talks/rpharma2026-gst/</a>
+</li>
+</ul>
+</div>
+<div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>The package is not yet available on CRAN. To install the development version of the package from Github run:</p>
@@ -86,6 +97,7 @@
 <div class="section level3">
 <h3 id="gst-power-app">GST Power App<a class="anchor" aria-label="anchor" href="#gst-power-app"></a>
 </h3>
+<p>Hosted app: <a href="https://xni7-gstpower.share.connect.posit.cloud" class="external-link uri">https://xni7-gstpower.share.connect.posit.cloud</a></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://xni7.github.io/gst">gst</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/gst_power_app.html">gst_power_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -93,10 +105,17 @@
 <div class="section level3">
 <h3 id="make-forestplot-app">Make Forestplot App<a class="anchor" aria-label="anchor" href="#make-forestplot-app"></a>
 </h3>
+<p>Hosted app: <a href="https://xni7-gstmakeforestplot.share.connect.posit.cloud" class="external-link uri">https://xni7-gstmakeforestplot.share.connect.posit.cloud</a></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://xni7.github.io/gst">gst</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/make_forestplot_app.html">make_forestplot_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
+</div>
+<div class="section level2">
+<h2 id="acknowledgement">Acknowledgement<a class="anchor" aria-label="anchor" href="#acknowledgement"></a>
+</h2>
+<p>Lerong Li implemented the O’Brien GST test and the power calculations in this package. Anthony Pileggi built the interfaces for both Shiny apps. Xiaolong Luo led the methodological development of the truncated closed test in <a href="https://doi.org/10.1002/pst.70010" class="external-link">Luo et al. (2025)</a>. Stephen Knapp and Preston Burns contributed to the package.</p>
+<p>The forest plot is drawn with <a href="https://cran.r-project.org/package=forestploter" class="external-link">forestploter</a> by Alimu Dayimu.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

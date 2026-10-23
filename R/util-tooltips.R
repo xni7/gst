@@ -5,6 +5,7 @@
 #' @param info info hover tooltip text (character/scalar)
 #' @param alert alert hover tooltip text (character/scalar)
 #'
+#' @noRd
 tooltip_label <- function(label, info = NULL, alert = NULL) {
   x <- list(label)
   if (!is.null(info))
@@ -16,11 +17,13 @@ tooltip_label <- function(label, info = NULL, alert = NULL) {
 }
 
 #' Info icon
+#' @noRd
 info_icon <- function() {
   bsicons::bs_icon("info-circle")
 }
 
 #' Alert icon
+#' @noRd
 alert_icon <- function() {
   bsicons::bs_icon("exclamation-circle", color = "darkred")
 }

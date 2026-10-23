@@ -7,6 +7,7 @@
 #' @param treatment treatment column value (character/scalar)
 #' @param ... additional parameters passed to \code{\link[MASS]{mvrnorm}}
 #'
+#' @noRd
 rmnv <- function(n, mean_v, cor_mtx, treatment = "trt", ...) {
   MASS::mvrnorm(
     n = n,
@@ -26,6 +27,9 @@ rmnv <- function(n, mean_v, cor_mtx, treatment = "trt", ...) {
 #' @param r rho, correlation coefficient (numeric/scalar)
 #' @param m number of rows/columns (numeric/scalar)
 #'
+#' @return An `m` x `m` numeric matrix with 1 on the diagonal and `r` elsewhere.
+#' @examples
+#' cor_cs(0.5, m = 3)
 #' @export
 #'
 cor_cs <- function(r, m = 2){
@@ -41,6 +45,7 @@ cor_cs <- function(r, m = 2){
 #' @param method choose between 'fisher' or 'stouffer' methods
 #'
 #' @importFrom stats pchisq pnorm qnorm
+#' @noRd
 p_combine <- function(p, R, method = c("fisher","stouffer")){
   method = match.arg(method)
 

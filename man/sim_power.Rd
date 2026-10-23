@@ -11,9 +11,10 @@ sim_power(
   R,
   alpha = 0.05,
   N = 1000,
-  ncore = 4,
+  ncore = 1L,
   method = c("ols", "gls"),
-  ...
+  ...,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -29,15 +30,23 @@ sim_power(
 
 \item{N}{number of replication}
 
-\item{ncore}{n of cores planned}
+\item{ncore}{number of cores for \code{\link[parallel:mclapply]{parallel::mclapply()}} (default 1; values
+above 1 are not supported on Windows)}
 
 \item{method}{obrien "ols", "gls"}
 
 \item{...}{additional arguments passed to \code{\link{obrien}}}
+
+\item{verbose}{print progress every 100 replications? (logical/scalar;
+default = FALSE)}
 }
 \value{
-power
+A numeric scalar: the proportion of simulated trials with an
+O'Brien test p-value at or below \code{alpha}.
 }
 \description{
 Calculate Power by simulation
+}
+\examples{
+sim_power(n0 = 30, lambda = c(0.3, 0.4), R = cor_cs(0.5), N = 20, ncore = 1)
 }

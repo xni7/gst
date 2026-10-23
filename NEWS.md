@@ -1,5 +1,27 @@
 <!-- Modified 2026-10-08 by Xiao Ni in https://github.com/xni7/gst. Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0. -->
 
+# gst 0.4.0
+
+First CRAN release.
+
+## Breaking changes
+
+* The Shiny module functions (`esWidgetUI()`, `esWidgetServer()`, `power2_ui()`, `power2_sever()`, `gstTippingPoint_ui()`) and `app_sys()` are no longer exported. They are internal to `gst_power_app()` and `make_forestplot_app()`, which are unchanged
+* `sim_power()` now uses one core by default (`ncore = 1L`, previously 4) and no longer prints progress or timing. Set `verbose = TRUE` for progress messages
+
+## Minor changes
+
+* `get_n()` documentation now states that it returns the sample sizes `n0` and `n1`
+* Every exported function documents its return value and has a runnable example
+* Title and Description rewritten, with references to O'Brien (1984) and Luo et al. (2025)
+* Removed the non-standard `pdr` role from the maintainer's Authors@R entry
+* `License` field changed to the standard `Apache License (== 2.0)`; the license itself is unchanged
+* Requires R >= 4.1.0 (the package uses the native pipe)
+* Import only the needed ggplot2 and plotly functions, which removes the `last_plot()` import warning
+* Use `TRUE`/`FALSE` instead of `T`/`F` throughout
+* Removed the empty `wei_lachin()` placeholder
+* Smaller vignette screenshot
+
 # gst 0.3.1
 
 ## Minor Changes

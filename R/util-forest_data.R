@@ -1,6 +1,8 @@
 #' Forestplot Example Data
 #'
 #' @return A data.frame that can be passed to \code{\link{forest_plot}}
+#' @examples
+#' head(forest_data())
 #' @export
 forest_data <- function() {
   data.frame(
@@ -16,6 +18,6 @@ forest_data <- function() {
     low = c(0.3, 0.35, 0.25, 0.3, 0.35, 0.25,0.3, 0.55, 0.25)-.5,
     hi = c(0.7, 0.85, 0.55, 0.7, 0.85, 0.55, 0.7, 0.95, 0.55)-.5,
     p = as.character(c(0.33, 0.33, 0.21, 0.26, 0.13, 0.31, 0.37, "<0.001", 0.14)),
-    invert = c(rep(F, 8), T)
+    invert = c(rep(FALSE, 8), TRUE)
   )
 }

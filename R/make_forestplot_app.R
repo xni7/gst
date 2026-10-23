@@ -7,12 +7,15 @@
 #' @param plot_width Width of the plot in pixels, default is 1200
 #' @param plot_height Height of the plot in pixels, default is 800
 #'
-#' @return A Shiny app
+#' @return With `runApp = FALSE`, a Shiny app object (class `shiny.appobj`).
+#'   With `runApp = TRUE` (the default), the app is launched and the function
+#'   returns the value of [shiny::runApp()] when the app stops.
 #' @export
 #'
 #' @importFrom grDevices png dev.off
 #'
 #' @examples
+#' app <- make_forestplot_app(runApp = FALSE)
 #' if (interactive()) {
 #'   make_forestplot_app()
 #' }
@@ -891,7 +894,7 @@ make_forestplot_app <- function(runApp=TRUE, plot_width=1000, plot_height=500) {
             )
           ) %>%
           dplyr::mutate(
-            invert = dplyr::coalesce(as.logical(.data$invert), F)   # replace missing 'invert' with FALSE
+            invert = dplyr::coalesce(as.logical(.data$invert), FALSE)   # replace missing 'invert' with FALSE
           )
 
         # update column names (for display)

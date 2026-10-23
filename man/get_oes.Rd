@@ -14,8 +14,11 @@ get_oes(lambda, R, method = c("ols", "gls"))
 \item{method}{obrien "ols",  "gls"}
 }
 \value{
-A scalar
+A numeric scalar: the operational (combined) effect size.
 }
 \description{
 Calculate operational effect size
+}
+\examples{
+get_oes(lambda = c(0.3, 0.4), R = cor_cs(0.5))
 }

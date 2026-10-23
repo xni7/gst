@@ -4,6 +4,7 @@
 #'
 #' @return object containing code to generate data.frame (character/scalar)
 #' @note TODO: handle missing data (currently using datapasta pkg instead for this)
+#' @noRd
 data_as_code <- function(data) {
   paste(
     "data.frame(",

@@ -2,7 +2,7 @@
 #'
 #' @param data dataset with treatment and multiple outcomes in wide format
 #' @param endpoint_vars the character vectors of outcomes in the dataset dat
-#' @param treatment_vars  treatment varialbe in the dataset dat
+#' @param treatment_vars  treatment variable in the dataset dat
 #' @param method obrien "ols",  "gls" and  "ranksum" test
 #' @param var.equal default TRUE. the obrien paper assumes equal variance and using pooled variance to standardize data
 #' @param ... other options passed to \code{\link[stats]{t.test}} and \code{\link[stats]{wilcox.test}}
@@ -206,7 +206,9 @@ obrien = function(data,
 #' @param lambda vector of effect size for each endpoint
 #' @param R correlation matrix of lambda
 #' @param method obrien "ols",  "gls"
-#' @return A scalar
+#' @return A numeric scalar: the operational (combined) effect size.
+#' @examples
+#' get_oes(lambda = c(0.3, 0.4), R = cor_cs(0.5))
 #' @export
 get_oes = function(lambda, R, method = c("ols","gls")) {
   if (length(lambda) != nrow(R))
@@ -230,10 +232,12 @@ get_oes = function(lambda, R, method = c("ols","gls")) {
 #' @param df degree of freedom
 #' @param alpha significance level
 #' @importFrom stats qt pt
-#' @return power
+#' @return A numeric scalar: the two-sided power of the t-test.
+#' @examples
+#' get_power(oes = 0.35, n0 = 50)
 #' @export
 get_power = function(oes, n0, n1 = n0, df = n0 + n1 - 2, alpha = 0.05){
-  t_crit = qt(p = 1 - alpha/2, df = df, lower.tail = T) # two sided
+  t_crit = qt(p = 1 - alpha/2, df = df, lower.tail = TRUE) # two sided
   power = 1 - pt(ncp = sqrt(n0 * n1 / (n0 + n1)) * oes,df = df, q = t_crit)
   return(power)
 }
@@ -246,15 +250,21 @@ get_power = function(oes, n0, n1 = n0, df = n0 + n1 - 2, alpha = 0.05){
 #' @param R correlation matrix of lambda
 #' @param alpha significance level
 #' @param N number of replication
-#' @param ncore n of cores planned
+#' @param ncore number of cores for [parallel::mclapply()] (default 1; values
+#'   above 1 are not supported on Windows)
 #' @param method obrien "ols", "gls"
 #' @param ... additional arguments passed to \code{\link{obrien}}
-#' @return power
+#' @param verbose print progress every 100 replications? (logical/scalar;
+#'   default = FALSE)
+#' @return A numeric scalar: the proportion of simulated trials with an
+#'   O'Brien test p-value at or below `alpha`.
+#' @examples
+#' sim_power(n0 = 30, lambda = c(0.3, 0.4), R = cor_cs(0.5), N = 20, ncore = 1)
 #' @export
-sim_power = function(n0, n1 = n0, lambda, R, alpha = 0.05, N = 1000, ncore = 4, method = c("ols","gls"), ...){
+sim_power = function(n0, n1 = n0, lambda, R, alpha = 0.05, N = 1000, ncore = 1L, method = c("ols","gls"), ..., verbose = FALSE){
   method =  match.arg(method)
   f = function(i){
-    if(i %% 100 == 0) system(paste0("echo 'Sim Now working:",i,"/",N,"'"))
+    if(verbose && i %% 100 == 0) message("Sim Now working: ", i, "/", N)
     m = length(lambda)
     x0 = rmnv(n = n0, mean_v = rep(0, m), cor_mtx = R,treatment = "pcb")
     x1 = rmnv(n = n1, mean_v = lambda,cor_mtx = R,treatment = "trt")
@@ -263,10 +273,7 @@ sim_power = function(n0, n1 = n0, lambda, R, alpha = 0.05, N = 1000, ncore = 4, 
     return(rlt$pvalue)
   }
 
-  rtime = system.time({
-    frlt = parallel::mclapply(X = 1:N,FUN = f,mc.cores = ncore)
-  })
-  print(rtime)
+  frlt = parallel::mclapply(X = 1:N,FUN = f,mc.cores = ncore)
 
   power = mean( unlist(frlt) <= alpha)
   return(power)
@@ -281,11 +288,14 @@ sim_power = function(n0, n1 = n0, lambda, R, alpha = 0.05, N = 1000, ncore = 4, 
 #' @param alpha significance level
 #' @param k sample size ratio of treatment vs placebo
 #' @param method obrien "ols",  "gls"
-#' @param df_method degrees-of-freedom method (one of: {vd, vob, vlt})
+#' @param df_method degrees-of-freedom method (one of "vd", "vob", "vlt")
 #' @param n0_range range of size in placebo to be searched
 #' @param tolerance the desired accuracy (convergence tolerance)
 #' @importFrom stats uniroot
-#' @return power
+#' @return A list with the required sample sizes `n0` (placebo) and `n1`
+#'   (treatment), each rounded up to a whole number.
+#' @examples
+#' get_n(power = 0.8, es0 = 0.3, es1 = 0.4, R = cor_cs(0.5), k = 1)
 #' @export
 get_n = function(power, es0, es1, R, alpha = 0.05, k,
                               method = c("ols", "gls"),

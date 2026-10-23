@@ -1,6 +1,6 @@
 #' Draw forest plot
 #'
-#' @param dt input data (columns: {Endpoint, Group, Comparator, Control, LSMean, low, hi, p, invert)})
+#' @param dt input data (columns: Endpoint, Group, Comparator, Control, LSMean, low, hi, p, invert)
 #' @param indent_subgroups indent subgroup labels (logical/scalar; default = TRUE)
 #' @param indent_keyword indent keyword (is this useful)
 #' @param standardize_plot normalize/standardize point estimate and CI plot display (logical/scalar)

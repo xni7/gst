@@ -9,7 +9,7 @@
 #' @importFrom DT DTOutput
 #' @importFrom plotly plotlyOutput
 #'
-#' @export
+#' @noRd
 power2_ui <- function(id) {
   ns <- NS(id)
   theme = bs_theme(version = 5, bootswatch = "flatly")
@@ -206,12 +206,12 @@ power2_ui <- function(id) {
 #' @param id namespaced ID (character/scalar)
 #'
 #' @import shiny
-#' @import plotly
+#' @importFrom plotly plot_ly add_contour add_segments add_annotations hide_guides layout renderPlotly
 #' @import dplyr
 #'
 #' @importFrom DT renderDT datatable
 #'
-#' @export
+#' @noRd
 #'
 #' @importFrom rlang .data
 power2_sever <- function(id) {
@@ -344,7 +344,7 @@ power2_sever <- function(id) {
           start = 0,
           end = 1,
           size = 0.01,
-          showlabels = F
+          showlabels = FALSE
         )
 
       ) |>
@@ -358,7 +358,7 @@ power2_sever <- function(id) {
               showlines = TRUE,
               coloring = "lines"
             ),
-          showlegend = F
+          showlegend = FALSE
         ) |>
         add_contour(
           ncontours = 1,
@@ -371,7 +371,7 @@ power2_sever <- function(id) {
               showlines = TRUE,
               coloring = "lines"
             ),
-          showlegend = F
+          showlegend = FALSE
         ) |>
         layout(
           title = "P-value Combination",
@@ -413,7 +413,7 @@ power2_sever <- function(id) {
               color = "white"
             ),
           inherit = FALSE,
-          showlegend = F
+          showlegend = FALSE
         ) |>
         add_segments(
           x = 0,
@@ -427,7 +427,7 @@ power2_sever <- function(id) {
               color = "white"
             ),
           inherit = FALSE,
-          showlegend = F
+          showlegend = FALSE
         )  |>
         hide_guides()
     })
@@ -510,7 +510,7 @@ power2_sever <- function(id) {
             color = "red"
           ),
           inherit = FALSE,
-          showlegend = F
+          showlegend = FALSE
         ) |>
         layout(
           title = "Power VS Sample Size",

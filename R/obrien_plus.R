@@ -9,6 +9,8 @@
 #'
 #' @param n1 Numeric, sample size for the first treatment group.
 #' @param n2 Numeric, sample size for the second treatment group.
+#' @param df Numeric, degrees of freedom for the t-distribution approximation
+#'   (default `n1 + n2 - 2`).
 #' @param es_ind Numeric vector, the standardized mean differences (Cohen's d)
 #'   for each individual endpoint under the alternative hypothesis.
 #' @param cor_mtx Numeric matrix, the correlation matrix (R) among the

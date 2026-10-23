@@ -12,3 +12,6 @@ A data.frame that can be passed to \code{\link{forest_plot}}
 \description{
 Forestplot Example Data
 }
+\examples{
+head(forest_data())
+}

@@ -1,6 +1,7 @@
 #' Import forest plot data from csv file
 #' @param filename full path to csv file (character/scalar)
 #'
+#' @noRd
 forest_import_csv <- function(filename) {
 
   # Read csv
@@ -16,8 +17,8 @@ forest_import_csv <- function(filename) {
 
   # Invert column
   if (!is.element("invert", names(df)))
-    df$invert <- F     # add 'invert' column if not provided; assume none are inverted
-  df$invert[is.na(df$invert)] <- F     # by default, do not invert
+    df$invert <- FALSE     # add 'invert' column if not provided; assume none are inverted
+  df$invert[is.na(df$invert)] <- FALSE     # by default, do not invert
 
   return(df)
 }

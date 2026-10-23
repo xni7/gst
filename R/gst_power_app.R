@@ -5,12 +5,15 @@
 #'
 #' @param runApp should the app be run on completion, default is TRUE
 #'
-#' @return A Shiny app
+#' @return With `runApp = FALSE`, a Shiny app object (class `shiny.appobj`).
+#'   With `runApp = TRUE` (the default), the app is launched and the function
+#'   returns the value of [shiny::runApp()] when the app stops.
 #' @export
 #'
 #' @import shiny
 #' @import bslib
 #' @examples
+#' app <- gst_power_app(runApp = FALSE)
 #' if (interactive()) {
 #'   gst_power_app()
 #' }

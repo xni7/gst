@@ -1,5 +1,6 @@
 #' Suggest parameters for a forest_plot
 #' @param dt forest data
+#' @noRd
 forest_suggest_params <- function(dt) {
 
   # construct table with suggested values based on 'number of rows'

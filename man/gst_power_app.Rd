@@ -10,12 +10,15 @@ gst_power_app(runApp = TRUE)
 \item{runApp}{should the app be run on completion, default is TRUE}
 }
 \value{
-A Shiny app
+With \code{runApp = FALSE}, a Shiny app object (class \code{shiny.appobj}).
+With \code{runApp = TRUE} (the default), the app is launched and the function
+returns the value of \code{\link[shiny:runApp]{shiny::runApp()}} when the app stops.
 }
 \description{
 Launch the GST Power App
 }
 \examples{
+app <- gst_power_app(runApp = FALSE)
 if (interactive()) {
   gst_power_app()
 }

@@ -18,7 +18,7 @@ obrien(
 
 \item{endpoint_vars}{the character vectors of outcomes in the dataset dat}
 
-\item{treatment_vars}{treatment varialbe in the dataset dat}
+\item{treatment_vars}{treatment variable in the dataset dat}
 
 \item{method}{obrien "ols",  "gls" and  "ranksum" test}
 

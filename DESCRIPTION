@@ -1,24 +1,32 @@
 Package: gst
-Title: Global Statistical Test
-Version: 0.3.1
+Title: Global Statistical Tests for Multiple Endpoints
+Version: 0.4.0
 Authors@R: c(
     person("Lerong", "Li", , "leli@sarepta.com", role = c("aut", "led")),
     person("Anthony", "Pileggi", , "APileggi@sarepta.com", role = c("aut")),
     person("Xiaolong", "Luo", , "XLuo@sarepta.com", role = c("aut")),
-    person("Xiao", "Ni", , "mooncase@gmail.com", role = c("aut", "cre", "pdr")),
+    person("Xiao", "Ni", , "mooncase@gmail.com", role = c("aut", "cre")),
     person("Sarepta Therapeutics Inc.", , role = c("cph", "fnd")),
     person("Stephen", "Knapp", , "sknapp@sarepta.com", 
            role = c("ctb"),
            comment = c(ORCID = "0000-0002-5101-4555")),
     person("Preston", "Burns", , "PrBurns@Sarepta.com", role = c("ctb"))
     )
-Description: Tools to evaluate and design Global Statistical Tests (GST). The package also provides a GUI to draw forestplot of multiple endpoints.
-License: file LICENSE
-URL: https://xni7.github.io/gst, https://github.com/xni7/gst/
+Description: Design and evaluate global statistical tests (GST) that combine
+    several endpoints into one test, including O'Brien's ordinary and generalized
+    least squares tests (O'Brien (1984) <doi:10.2307/2531158>), power and sample
+    size calculations, and an O'Brien-based truncated closed testing procedure
+    (Luo et al. (2025) <doi:10.1002/pst.70010>). Two 'shiny' applications support
+    interactive power calculation and the creation of forest plots for multiple
+    endpoints from summary statistics.
+License: Apache License (== 2.0)
+URL: https://xni7.github.io/gst/, https://github.com/xni7/gst
 BugReports: https://github.com/xni7/gst/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1.0)
 Imports: 
     dplyr,
     forestploter,

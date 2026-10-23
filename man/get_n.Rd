@@ -32,15 +32,19 @@ get_n(
 
 \item{method}{obrien "ols",  "gls"}
 
-\item{df_method}{degrees-of-freedom method (one of: {vd, vob, vlt})}
+\item{df_method}{degrees-of-freedom method (one of "vd", "vob", "vlt")}
 
 \item{n0_range}{range of size in placebo to be searched}
 
 \item{tolerance}{the desired accuracy (convergence tolerance)}
 }
 \value{
-power
+A list with the required sample sizes \code{n0} (placebo) and \code{n1}
+(treatment), each rounded up to a whole number.
 }
 \description{
 Calculate sample size
+}
+\examples{
+get_n(power = 0.8, es0 = 0.3, es1 = 0.4, R = cor_cs(0.5), k = 1)
 }

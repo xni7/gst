@@ -11,6 +11,12 @@ cor_cs(r, m = 2)
 
 \item{m}{number of rows/columns (numeric/scalar)}
 }
+\value{
+An \code{m} x \code{m} numeric matrix with 1 on the diagonal and \code{r} elsewhere.
+}
 \description{
 Create a compound-symmetric correlation matrix
+}
+\examples{
+cor_cs(0.5, m = 3)
 }

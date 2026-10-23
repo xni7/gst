@@ -34,7 +34,7 @@ forest_plot(
 )
 }
 \arguments{
-\item{dt}{input data (columns: {Endpoint, Group, Comparator, Control, LSMean, low, hi, p, invert)})}
+\item{dt}{input data (columns: Endpoint, Group, Comparator, Control, LSMean, low, hi, p, invert)}
 
 \item{indent_subgroups}{indent subgroup labels (logical/scalar; default = TRUE)}
 

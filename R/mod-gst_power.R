@@ -9,7 +9,7 @@
 #' @import rhandsontable
 #' @importFrom DT DTOutput
 #'
-#' @export
+#' @noRd
 esWidgetUI <- function(id) {
   ns <- NS(id)
 
@@ -145,7 +145,7 @@ esWidgetUI <- function(id) {
 #' @import rhandsontable
 #' @importFrom DT renderDT datatable
 #'
-#' @export
+#' @noRd
 #'
 #' @importFrom rlang .data
 esWidgetServer <- function(id) {
@@ -245,7 +245,7 @@ esWidgetServer <- function(id) {
           cols = cn,
           min = -1,
           max = 1 ,
-          allowInvalid = T
+          allowInvalid = TRUE
         )
 
       ncols <- ncol(corMatrix())

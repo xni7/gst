@@ -42,7 +42,7 @@ Here you can provide additional assumptions, including:
 
   - Sample sizes for the control and treatment groups
   - 2-side alpha (i.e., significance level)
-  - Fit Method -- choose betweeen OLS (default) and GLS
+  - Fit Method -- choose between OLS (default) and GLS
   - Degrees of Freedom -- choose between Dallow (default), O'Brien, and Logan and Tamhane
   
 ### Step 5: Calculate

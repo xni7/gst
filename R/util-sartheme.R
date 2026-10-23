@@ -2,6 +2,7 @@
 # Original work copyright 2025 Sarepta Therapeutics Inc., Apache License 2.0.
 
 #' Theme for the gst Shiny apps
+#' @noRd
 sartheme <- function() {
 
   sar_purple <- '#661b62'

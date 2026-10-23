@@ -18,8 +18,11 @@ get_power(oes, n0, n1 = n0, df = n0 + n1 - 2, alpha = 0.05)
 \item{alpha}{significance level}
 }
 \value{
-power
+A numeric scalar: the two-sided power of the t-test.
 }
 \description{
 Calculate Power
+}
+\examples{
+get_power(oes = 0.35, n0 = 50)
 }

@@ -11,13 +11,20 @@ forest_reprex(forestplot, unfold = FALSE)
 
 \item{unfold}{unfold the \code{\link{forest_plot}} function? (logical/scalar; default = FALSE)}
 }
+\value{
+A character vector of R code lines that recreate the plot.
+}
 \description{
 Create reproducible code for current forestplot
 }
 \note{
-Unfolding the code (\code{unfold = T}) will generate a code snippet that uses the
-\code{\link{forestploter}} package functions directly; the resulting code
+Unfolding the code (\code{unfold = TRUE}) will generate a code snippet that uses the
+\code{\link[forestploter:forest]{forestploter::forest()}} and related package functions directly; the resulting code
 does not require the \code{gst} package.
 
 WARNING: This function will not create a perfect reprex if you use the \code{...} argument in \code{\link{forest_plot}}
+}
+\examples{
+fp <- forest_plot(forest_data())
+cat(forest_reprex(fp), sep = "\n")
 }

@@ -5,12 +5,13 @@
 #'
 #' @param id namespaced ID (character/scalar)
 #'
-#' @import shiny ggplot2
+#' @import shiny
+#' @importFrom ggplot2 ggplot aes geom_line geom_point geom_vline theme_bw xlab ylab annotate
 #' @importFrom plotly ggplotly renderPlotly plotlyOutput
 #' @importFrom tibble tibble
 #' @importFrom dplyr bind_rows
 #'
-#' @export
+#' @noRd
 
 # UI
 gstTippingPoint_ui <- function(id) {
@@ -114,10 +115,10 @@ gstTippingPoint_server <- function(id) {
         closest_index <- which.min(abs(plot_rho_vec - user_rho()))
         TP_Rho <- round(tp[closest_index], 2)
 
-        p1 <- ggplot(df, aes(x = rho, y = TippingPoint)) +
+        p1 <- ggplot(df, aes(x = .data$rho, y = .data$TippingPoint)) +
           geom_line(color = "blue") +
           geom_point() +
-          geom_point(data = dplyr::filter(df, rho == user_rho()), color = "red", size = 4) +
+          geom_point(data = dplyr::filter(df, .data$rho == user_rho()), color = "red", size = 4) +
           theme_bw() +
           ylab("Tipping Point") +
           xlab("Correlation") +
@@ -153,7 +154,7 @@ gstTippingPoint_server <- function(id) {
       n_digits <- reactive({
         req(user_rho())
         d <- stringr::str_split(user_rho(), stringr::fixed("."))[[1]] |>
-          tail(1) |>
+          utils::tail(1) |>
           nchar()
         max(c(d, 2))   # never go below 2 digits!
       })

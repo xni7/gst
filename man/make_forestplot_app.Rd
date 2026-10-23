@@ -14,12 +14,15 @@ make_forestplot_app(runApp = TRUE, plot_width = 1000, plot_height = 500)
 \item{plot_height}{Height of the plot in pixels, default is 800}
 }
 \value{
-A Shiny app
+With \code{runApp = FALSE}, a Shiny app object (class \code{shiny.appobj}).
+With \code{runApp = TRUE} (the default), the app is launched and the function
+returns the value of \code{\link[shiny:runApp]{shiny::runApp()}} when the app stops.
 }
 \description{
 A Shiny app to make a forest plot
 }
 \examples{
+app <- make_forestplot_app(runApp = FALSE)
 if (interactive()) {
   make_forestplot_app()
 }

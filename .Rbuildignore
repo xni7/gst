@@ -1,7 +1,7 @@
 ^renv$
 ^renv\.lock$
 ^app\.R$
-^apps/
+^apps$
 ^rsconnect$
 ^\.vscode$
 ^.*\.Rproj$
@@ -12,3 +12,9 @@
 ^\.gitlab-ci\.yml$
 ^ci/lib$
 ^cache$
+^LICENSE$
+^CONTRIBUTING\.md$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
+^\.claude$
+^\.codex$

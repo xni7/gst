@@ -73,15 +73,15 @@ obt = function(data,
 
   # Derive F
   if (length(jendpoint) > 0) {
-    F <- c("G", hypotheses)
+    fam <- c("G", hypotheses)
   } else {
-    F <- hypotheses
+    fam <- hypotheses
   }
 
   # Generate all possible combinations of elements in F
   all_Fs <- list()
-  for (k in 1:length(F)) {
-    comb_k <- utils::combn(F, k, simplify = FALSE)
+  for (k in 1:length(fam)) {
+    comb_k <- utils::combn(fam, k, simplify = FALSE)
     all_Fs <- c(all_Fs, comb_k)
   }
 
@@ -125,14 +125,14 @@ obt = function(data,
   df <- df |>
     dplyr::mutate(
       nu = nu,
-      zeta = stringr::str_count(.data$all_Fs2, "H") / length(F),   # proportion of hypotheses being tested for each intersection
+      zeta = stringr::str_count(.data$all_Fs2, "H") / length(fam),   # proportion of hypotheses being tested for each intersection
       alpha_trun = nu * alpha + (1 - nu) * .data$zeta * alpha      # local alpha threshold from the truncated closed test
     )
 
   # Rejection status for truncated & untruncated closed testing (1 = reject; 0 = accept)
   df_gst <-
     purrr::map_df(
-      F,
+      fam,
       function(fk) {
         df |>
           dplyr::filter(
@@ -151,7 +151,7 @@ obt = function(data,
     )
 
   # Compute adjusted p-values for F
-  p <- df[df$all_Fs %in% F, ]$all_ps
+  p <- df[df$all_Fs %in% fam, ]$all_ps
   methods <- c("holm", "hochberg", "hommel", "bonferroni")
   for (m in methods) {
     p_adj <- stats::p.adjust(p, method = m, n = length(p))
@@ -169,7 +169,7 @@ obt = function(data,
 
   return(
     list(
-      F = F,
+      F = fam,
       df = df,
       df_gst = df_gst,
       alpha_A = alpha_A

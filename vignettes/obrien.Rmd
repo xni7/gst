@@ -128,19 +128,25 @@ results <-
     }
   )
 
-# display results in a nice table
-results |>
+# display results in a nice table (gt is optional; fall back to kable)
+results_tbl <- results |>
   dplyr::transmute(
     Endpoints = endpoints,
     DF = df,
     `Test Statistic` = round(statistic, 2),
     `P-value` = round(pvalue, 3)
-  ) |>
-  gt::gt() |>
-  gt::fmt_auto() |>
-  gt::tab_header(
-    "O'Brien's OLS Test on All Endpoint Combinations"
   )
+
+if (requireNamespace("gt", quietly = TRUE)) {
+  results_tbl |>
+    gt::gt() |>
+    gt::fmt_auto() |>
+    gt::tab_header(
+      "O'Brien's OLS Test on All Endpoint Combinations"
+    )
+} else {
+  knitr::kable(results_tbl, caption = "O'Brien's OLS Test on All Endpoint Combinations")
+}
 
 ```
 

@@ -21,6 +21,9 @@ obrien_plus(
 
 \item{n2}{Numeric, sample size for the second treatment group.}
 
+\item{df}{Numeric, degrees of freedom for the t-distribution approximation
+(default \code{n1 + n2 - 2}).}
+
 \item{es_ind}{Numeric vector, the standardized mean differences (Cohen's d)
 for each individual endpoint under the alternative hypothesis.}
 

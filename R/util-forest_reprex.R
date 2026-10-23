@@ -3,12 +3,16 @@
 #' @param forestplot output from forest_plot()
 #' @param unfold unfold the \code{\link{forest_plot}} function? (logical/scalar; default = FALSE)
 #'
-#' @note Unfolding the code (`unfold = T`) will generate a code snippet that uses the
-#'  \code{\link{forestploter}} package functions directly; the resulting code
+#' @note Unfolding the code (`unfold = TRUE`) will generate a code snippet that uses the
+#'  [forestploter::forest()] and related package functions directly; the resulting code
 #'  does not require the `gst` package.
 #'
 #' @note WARNING: This function will not create a perfect reprex if you use the `...` argument in \code{\link{forest_plot}}
 #'
+#' @return A character vector of R code lines that recreate the plot.
+#' @examples
+#' fp <- forest_plot(forest_data())
+#' cat(forest_reprex(fp), sep = "\n")
 #' @export
 forest_reprex <- function(forestplot, unfold = FALSE) {
 

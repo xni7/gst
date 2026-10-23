@@ -1,6 +1,0 @@
-
-
-wei_lachin = function(){
-
-
-}
